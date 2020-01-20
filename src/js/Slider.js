@@ -65,6 +65,7 @@ export default class Slider {
             return 'hide'
         }
     }
+    //
 
     render() {
         document.querySelector('.slider_wrap').innerHTML = `
