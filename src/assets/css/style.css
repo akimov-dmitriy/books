@@ -4,10 +4,71 @@ body {
     background: #F1F1F1;
     font-family: sans-serif;
 }
+.add_photo{
+    width: 110px;
+    margin: 5px 0 10px;
+    cursor: pointer;
+}
+.add_book{
+    display: flex;
+    position: sticky;
+    right: 50px;
+    padding: 8px;
+    cursor: pointer;
+}
+.books_list{
+    margin-top: 100px;
+}
+.book_block{
+    display: flex;
+    margin-bottom: 15px;
+    background: #fff;
+}
+.book_photo_wrap{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+}
+.book_left-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+}
+.book_left-section input{
+    width: 110px;
+    margin-top: 5px;
+}
+.book_left-section input:hover{
+    cursor: pointer;
+}
+.book_left-section img {
+    cursor: pointer;
+    object-fit: cover;
+    width: 110px;
+    height: 120px;
+}
+.book_info{
+    padding:  10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.bold{
+    font-weight: bold;
+}
+.block_photo{
+    z-index: 10;
+}
 .content{
     max-width: 800px;
     margin: 50px auto;
     position: relative;
+}
+.cursive {
+    font-style: italic;
 }
 .form_wrap {
     display: flex;
@@ -37,49 +98,6 @@ form input[type = 'submit']{
     width: 100px;
     cursor: pointer;
 }
-
-.books_list{
-    margin-top: 100px;
-}
-
-.book_block{
-    display: flex;
-    margin-bottom: 15px;
-    background: #fff;
-}
-
-.book_photo_wrap{
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    background: #fff;
-}
-.book_left-section{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 0;
-}
-.book_left-section input{
-    width: 110px;
-    margin-top: 5px;
-}
-.book_left-section input:hover{
-    cursor: pointer;
-}
-.book_info{
-    padding:  10px 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.bold{
-    font-weight: bold;
-}
-.cursive {
-    font-style: italic;
-}
 .grey{
     color: grey;
 }
@@ -107,25 +125,6 @@ form input[type = 'submit']{
     width: 500px;
     outline: none;
 }
-.book_left-section img {
-    cursor: pointer;
-    object-fit: cover;
-    width: 110px;
-    height: 120px;
-}
-.add_photo{
-    width: 110px;
-    margin: 5px 0 10px;
-    cursor: pointer;
-}
-.add_book{
-    display: flex;
-    position: sticky;
-    right: 50px;
-    padding: 8px;
-    cursor: pointer;
-}
-
 .slider_wrap{
     position: fixed;
     top: 50%;
@@ -139,13 +138,17 @@ form input[type = 'submit']{
     display: flex;
     justify-content:center;
     align-items: center;
-
 }
 .slider .block_photo img{
     width: 400px;
 }
-.block_photo{
-    z-index: 10;
+.substrate{
+    background: grey;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.3;
 }
 .leftArrow, .rightArrow{
     width: 50px;
@@ -154,9 +157,6 @@ form input[type = 'submit']{
     top: 50%;
     opacity: 0.8;
     cursor: pointer;
-}
- .rightArrow:hover{
-    opacity: 1;
 }
 .leftArrow:hover{
     opacity: 1;
@@ -174,17 +174,10 @@ form input[type = 'submit']{
     transform: translate(0, -50%);
     z-index: 10;
 }
+.rightArrow:hover{
+    opacity: 1;
+}
 .hide{
     display: none;
-}
-.substrate{
-    background: grey;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    z-index: 5;
-    opacity: 0.3;
-    transition: all 1s ease;
-
 }
 

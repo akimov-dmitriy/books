@@ -7,7 +7,7 @@ const isIdExist = location.search.split('?id=');
 
 /**
  *
- * @param data - book to add
+ * @param {object} data - book to add
  */
 const addBook = (data) => {
     if (data && !data.id) {
@@ -66,11 +66,8 @@ const initForm = (form, obj) => {
         if (form.elements[i].type === 'text') {
             if (form.elements[i].getAttribute('name') == 'photo') {
                 form.elements[i].value = obj.photos[numberPhoto];
-                console.log(form);
                 numberPhoto++;
             } else {
-                // console.log(obj[form.elements[i].name]);
-                console.log(form);
                 form.elements[i].value = obj[form.elements[i].name];
             }
 

@@ -65,7 +65,7 @@ const handlerViewPhoto = (e) =>{
 /**
  *
  * @param parentElem - place to render book
- * @param book - book for render
+ * @param {object} book - book for render
  */
 const renderBook = (parentElem, book) => {
     let node = document.createElement('div');
@@ -150,28 +150,6 @@ document.querySelector('.search_input').addEventListener('input', function (e) {
     let books = findBooksByName(this.value);
     renderBooksList(books);
 });
-
-//
-// document.querySelector('.books_list').addEventListener('click', function (e) {
-//     let id = e.target.getAttribute('data-id');
-//
-//     ///delete book/////
-//     if (e.target.matches('.delete_book_btn')) {
-//         deleteBook(id, books);
-//         renderBooksList(books);
-//     }
-//     ///edit book/////
-//     if (e.target.matches('.change_book_btn')) {
-//         location.href = `/form.html?id=${id}`;
-//     }
-//     ///view photo////
-//     if (e.target.matches('.book_img')) {
-//         let book = findBookById(id, books);
-//         new Slider(getPhotos(book));
-//         e.stopPropagation()
-//     }
-// });
-
 
 document.querySelector('.add_book').addEventListener('click', function () {
     location.href = `/form.html`;

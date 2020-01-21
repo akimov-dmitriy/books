@@ -14,24 +14,17 @@ export default class Slider {
         document.querySelector('.slider_wrap').innerHTML = '';
     }
 
+    /**
+     * sets events to slider buttons
+     */
     setHandlers() {
-        let rightArrow = document.querySelector('.rightArrow');
-        const nextPhoto = (e) =>{
+        document.querySelector('.rightArrow').addEventListener('click', (e) => {
             e.preventDefault();
             if (this.photos.length > 1) {
                 this.movePhotosRight();
             }
             e.stopPropagation()
-        };
-        rightArrow.onclick = nextPhoto;
-
-        // document.querySelector('.rightArrow').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     if (this.photos.length > 1) {
-        //         this.movePhotosRight();
-        //     }
-        //     e.stopPropagation()
-        // });
+        });
         document.querySelector('.leftArrow').addEventListener('click', (e) => {
             e.preventDefault();
             if (this.photos.length > 1) {
@@ -66,18 +59,21 @@ export default class Slider {
         }
     }
 
+    /**
+     * render slider to 'slider_wrap'
+     */
     render() {
         document.querySelector('.slider_wrap').innerHTML = `
             <div class="slider">
                 <div class="substrate"></div>
                 <div class="leftArrow ${this.hideArrow()}">
-                    <img src="./assets/img/arrow.png" alt="">
+                    <img src="./assets/img/arrow.png" alt="arrow">
                 </div>
                 <div class="block_photo">
-                    <img src="" alt="" class="photo">
+                    <img src="" alt="book photo" class="photo">
                 </div>
                 <div class="rightArrow ${this.hideArrow()}">
-                    <img src="./assets/img/arrow.png" alt="">
+                    <img src="./assets/img/arrow.png" alt="arrow">
                 </div>
             </div>
     `

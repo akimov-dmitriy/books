@@ -5,16 +5,13 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
-    "start": "npm run build && npm run dev"
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.3",
-    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.4.3",
-    "@babel/runtime": "^7.8.3",
     "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^5.0.3",
     "html-webpack-plugin": "^3.2.0",

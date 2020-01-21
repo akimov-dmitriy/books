@@ -1,6 +1,6 @@
 /**
  *
- * @param data - an array of books to save in LocalStorage
+ * @param {array} data - an array of books to save in LocalStorage
  */
 export function saveBooks(data) {
     localStorage.setItem('books', JSON.stringify(data));
@@ -16,8 +16,8 @@ export function getBooksFromLocalStorage() {
 
 /**
  *
- * @param id - id books to delete
- * @param books - books array
+ * @param {string} id - id books to delete
+ * @param {object[]}books - books array
  */
 export function deleteBook(id, books) {
     let index = books.findIndex(elem => elem.id === id);
