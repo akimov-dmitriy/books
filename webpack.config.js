@@ -7,7 +7,7 @@ module.exports = {
         form: './src/js/form.js'
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].js?[hash]',
     },
     module: {
         rules:[{

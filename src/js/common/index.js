@@ -29,8 +29,8 @@ export function deleteBook(id, books) {
 
 /**
  *
- * @param id - search book id
- * @param data - books array
+ * @param {string} id - search book id
+ * @param {object[]} data - books array
  * @returns {*} - found book || undefined
  */
 export function findBookById(id, data) {
