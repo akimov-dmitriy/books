@@ -41,9 +41,12 @@ const getPhotos = (book) => {
  * @param {event} e
  */
 const handlerDeleteBook = (e) => {
-    let id = e.target.getAttribute('data-id');
-    deleteBook(id, books);
-    renderBooksList(books);
+    let confirmDelete = confirm('Удалить книгу?');
+    if (confirmDelete){
+        let id = e.target.getAttribute('data-id');
+        deleteBook(id, books);
+        renderBooksList(books);
+    }
 }
 /**
  *
