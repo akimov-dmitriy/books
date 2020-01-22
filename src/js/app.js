@@ -1,6 +1,6 @@
 import Slider from "./Slider";
 import {getBooksFromLocalStorage, saveBooks, deleteBook, findBookById} from "./common";
-import {BOOKS_URL} from "./constants";
+import {BOOKS_URL,NO_IMG_URL} from "./constants";
 
 let books = [];
 
@@ -21,7 +21,8 @@ const getBooksFromServer = (url) => {
                 publishing_house: elem.volumeInfo.publisher || 'не указано',
                 data: elem.volumeInfo.publishedDate || 'не указана',
                 author: elem.volumeInfo.authors ? elem.volumeInfo.authors.join(', ') : 'не указан',
-                photos: elem.volumeInfo.imageLinks ? [`${elem.volumeInfo.imageLinks.thumbnail}`] : ['https://saharokstore.ru/no_photo.png'],
+                photos: elem.volumeInfo.imageLinks ? [`${elem.volumeInfo.imageLinks.thumbnail}`]
+                    : [NO_IMG_URL],
                 name_book: elem.volumeInfo.title,
             }
         }))
@@ -76,7 +77,9 @@ const renderBook = (parentElem, book) => {
              </div>
       </div>
       <div class="book_info"  >
-                <p><span class = "bold">Название книги:</span> <span class="cursive grey">"${book.name_book}"</span></p>
+                <p><span class = "bold">Название книги:</span> 
+                    <span class="cursive grey">"${book.name_book}"</span>
+                </p>
                 <p><span class = "bold">Рубрика:</span> ${book.theme}</p>
                 <p><span class = "cursive">Автор(ы): ${book.author}</span></p>
                 <p><span class = "bold">Издательство:</span> ${book.publishing_house}</p>
@@ -86,14 +89,14 @@ const renderBook = (parentElem, book) => {
       </div>
     `;
     let deleteInput = document.createElement('input');
-    deleteInput.classList.add('delete_book_btn');
+    deleteInput.classList.add('button-red','button','delete_book_btn');
     deleteInput.type = 'button';
-    deleteInput.value = 'удалить';
+    deleteInput.value = 'Удалить';
     deleteInput.onclick = handlerDeleteBook;
     deleteInput.dataset.id = book.id;
 
     let changeBookBtn = document.createElement('input');
-    changeBookBtn.classList.add('change_book_btn');
+    changeBookBtn.classList.add('button-green','button','change_book_btn');
     changeBookBtn.type = 'button';
     changeBookBtn.value = 'Редактировать';
     changeBookBtn.onclick = handlerChangeBook;
@@ -131,7 +134,7 @@ const findBooksByName = (name) => {
     return books.filter(book => book.name_book.toLowerCase().indexOf(name.toLowerCase()) !== -1);
 }
 
-if (localStorage.getItem('books') == null) {
+if (!localStorage.getItem('books')) {
     getBooksFromServer(BOOKS_URL)
         .then(res => {
             renderBooksList(res);
@@ -146,7 +149,7 @@ if (localStorage.getItem('books') == null) {
 /**
  * books search event
  */
-document.querySelector('.search_input').addEventListener('input', function (e) {
+document.querySelector('.search_input').addEventListener('input', function () {
     let books = findBooksByName(this.value);
     renderBooksList(books);
 });

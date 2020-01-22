@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "cd ./dist & surge ./ recondite-tendency.surge.sh",
+    "build-and-deploy": "npm run build & npm run deploy"
   },
   "author": "",
   "license": "ISC",
