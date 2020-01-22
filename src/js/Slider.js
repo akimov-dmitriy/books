@@ -87,11 +87,6 @@ export default class Slider {
                 <div class="rightArrow ${this.hideArrow()}">
                     <img src="./assets/img/arrow.png" alt="arrow">
                 </div>
-                
-                
-<!--                <div class="substrate">-->
-<!--                    <div class="close_slider">X</div>-->
-<!--                </div>-->
             </div>
     `
     }

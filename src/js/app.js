@@ -105,6 +105,7 @@ const renderBook = (parentElem, book) => {
     let bookImg = document.createElement('img');
     bookImg.classList.add('book_img');
     bookImg.src = getPhotos(book)[0];
+    bookImg.alt = 'book photo';
     bookImg.dataset.id = book.id;
     bookImg.onclick = handlerViewPhoto;
 
